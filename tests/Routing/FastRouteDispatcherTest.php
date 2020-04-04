@@ -16,7 +16,7 @@ use FastRoute\RouteCollector;
 use Slim\Routing\FastRouteDispatcher;
 use Slim\Tests\TestCase;
 
-use function FastRoute\simpleDispatcher;
+use function FastRoute\Utils::simpleDispatcher;
 
 class FastRouteDispatcherTest extends TestCase
 {

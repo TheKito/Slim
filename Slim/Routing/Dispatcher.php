@@ -49,14 +49,14 @@ class Dispatcher implements DispatcherInterface
         $cacheFile = $this->routeCollector->getCacheFile();
         if ($cacheFile) {
             /** @var FastRouteDispatcher $dispatcher */
-            $dispatcher = \FastRoute\cachedDispatcher($routeDefinitionCallback, [
+            $dispatcher = \FastRoute\Utils::cachedDispatcher($routeDefinitionCallback, [
                 'dispatcher' => FastRouteDispatcher::class,
                 'routeParser' => new Std(),
                 'cacheFile' => $cacheFile,
             ]);
         } else {
             /** @var FastRouteDispatcher $dispatcher */
-            $dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback, [
+            $dispatcher = \FastRoute\Utils::simpleDispatcher($routeDefinitionCallback, [
                 'dispatcher' => FastRouteDispatcher::class,
                 'routeParser' => new Std(),
             ]);
